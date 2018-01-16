@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
+<icon src="dominion.png" width="29" height="29" density="29"/>
+
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.phonegap.json1"
     versionCode = "10"
-    version     = "1.0.0" >
+    version     = "1.0.1" >
 
 <!-- versionCode is optional and Android only -->
 
@@ -13,7 +16,7 @@
      This code saves login details in a Json db
   </description>
 
-  <author href="https://jermtechnology.com" email="ifo@jermtechnology.com">
+  <author href="https://jermtechnology.com" email="info@jermtechnology.com">
       Henry Henry
   </author>
 
