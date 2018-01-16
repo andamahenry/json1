@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
-<icon src="dominion.png" width="29" height="29"/>
-
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.phonegap.json1"
@@ -19,5 +16,7 @@
   <author href="https://jermtechnology.com" email="info@jermtechnology.com">
       Henry Henry
   </author>
+    
+  <icon src="dominion.png" width="29" height="29"/>
 
 </widget>
