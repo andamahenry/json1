@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<HEAD>
+	<meta charset="utf-8">
+<TITLE>	Json Test File</TITLE>
+<style>
+input, textarea {
+  background-color : green;
+}
+</style>
+</HEAD>
+<body>
+<h1 align='center'>THIS RUNS JSON FILES!...</h1>
+
+<div style = "width:25%;background-color:lightblue;margin:auto">
+	<form id="userdetails" action="" method = "" ><br><br>
+		<label>User Name: </label><input type = "text" width="100%" id="uname" name = "uname" placeholder = "Enter User Name..." required./><br><br>
+		<label>Password: </label><input type = "password" id="pswd" name = "pswd" placeholder = "Enter Password..." reqiured./><br><br>
+		<label>Date: </label><input type = "date" id="date" name = "date" placeholder = "Enter date..." required./><br><br>
+		<div align = "right"><input type="button" value="Submit"onclick = "submitjson()"/></div><br><br>
+	</form>
+</div><br><br>
+<div id='usrdata' style = "width:30%; backgroud-color:blue; margin:auto">
+this should be user output
+</div>
+
+<script>
+function submitjson(){
+	//Declare and assign variables	
+	var uname, pswd, date,output;
+	uname = document.getElementById('uname').value;
+	pswd = document.getElementById('pswd').value;
+	date = document.getElementById('date').value;
+	//concatenate variables for HTML output
+	output = uname+' '+pswd+' '+date;
+	//HTML output
+	//console.log(output);
+	document.getElementById("usrdata").innerHTML = output;
+	//create json text format
+	var jsontext = {"logindetails":[{"uname":uname,"pswd":pswd,"date":date}]};
+	var jsondata = JSON.stringify(jsontext);
+	//create js object from JSON data
+	//var jsonobject = JSON.parse(jsontext);
+	console.log(jsondata);
+	//store JSON data on localstorage
+	localStorage.setItem("jsondb1",jsondata);
+	console.log("data stored succesfully");
+	//console.log(jsontext.logindetails);
+	//Retrieve data from localstorage
+	var retrievedata = localStorage.getItem("jsondb1");
+	var retrdata = JSON.parse(retrievedata);
+	document.write(retrdata.logindetails[0].uname+"<br>");
+	document.write(retrdata.logindetails[0].pswd+"<br>");
+	document.write(retrdata.logindetails[0].date+"<br>");
+	console.log(retrdata.logindetails.length);
+}
+
+</script>
+</body>
+
+</HTML>
